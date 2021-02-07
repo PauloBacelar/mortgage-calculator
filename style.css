@@ -30,6 +30,10 @@ h1 {
     margin-bottom: 30px;
 }
 
+h2 {
+    margin-top: 20px;
+}
+
 label {
     display: block;
 }
@@ -58,6 +62,10 @@ input {
     display: block;
     margin: 0 auto;
     margin-bottom: 15px;
+}
+
+#years-paying {
+    margin: 10px 0px;
 }
 
 #calc-btn {
@@ -91,19 +99,6 @@ input {
     /* Colors and text */
     background-color:  rgb(0, 29, 82);
     color: white;
-}
-
-/* Results */
-#decimal-result {
-    /* Size */
-    width: 180px;
-
-    /* Margin and padding */
-    padding: 7.5px;
-    margin: auto auto 20px auto;
-
-    /* Colors and text */
-    color: rgb(0, 29, 82);
 }
 
 /* Remove input arrows */
