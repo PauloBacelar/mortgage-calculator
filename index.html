@@ -1,12 +1,51 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta tags -->
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <!-- Title -->
+    <title>Mortgage calculator</title>
+
+    <!-- Link font and CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Grandstander&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="./mortgage.png" type="image/gif" sizes="16x16">
+
 </head>
 <body>
-    
+    <div id="content">
+        <!-- Title and subtitle -->
+        <h1>Mortgage calculator</h1>
+
+        <!-- Input -->
+        <label for="">Down payment (0%)</label>
+        <input type="down-payment" name="down-payment" class="input" id="down-payment">
+
+        <label for="">House value</label>
+        <input type="house-value" name="house-value" class="input" id="house-value">
+
+        <label for="">Interest rate (%)</label>
+        <input type="number" name="interest-rate" id="interest-rate" class="input">
+
+        <input type="radio" name="monthly-or-anual" id="monthly" checked class="input-radio">
+        <label for="monthly-or-anual" class="label-radio" id="monthly-label">Monthly</label>
+        <input type="radio" name="monthly-or-anual" id="anual" class="input-radio">
+        <label for="monthly-or-anual" class="label-radio">Anual</label><br>
+
+        
+
+        <!-- Button -->
+        <button id="calc-btn">Calc</button>
+
+        <!-- Results -->
+        <div id="decimal-result"><h2 id="cents">Total loan</h2></div>
+
+        <script src="script.js"></script>
+    </div>
 </body>
 </html>
