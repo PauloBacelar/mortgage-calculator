@@ -31,7 +31,9 @@ function calcTotalLoan() {
     let toBePaid = homePrice.value - downPayment.value;
 
     if(monthly.checked) {
-        return toBePaid * (((1 + interestRate.value / 100) ** years.value * 12));
+        return (toBePaid * (((1 + interestRate.value / 100) ** (years.value * 12)))).toFixed(2);
+    } else {
+        return (toBePaid * ((1 + interestRate.value / 100) ** years.value)).toFixed(2);
     }
 }
 
