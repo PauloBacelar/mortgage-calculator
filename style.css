@@ -5,6 +5,10 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     /* Colors and text */
     background-color: rgb(203, 216, 223);
@@ -68,7 +72,7 @@ input {
     margin: 10px 0px;
 }
 
-#calc-btn {
+button {
     /* Margin and padding */
     padding: 7.5px;
     margin-top: 20px;
@@ -95,15 +99,24 @@ input {
     transition-duration: 0.5s;
 }
 
-#calc-btn:hover {
+button:hover {
     /* Colors and text */
     background-color:  rgb(0, 29, 82);
     color: white;
 }
 
+#back-to-top {
+    margin-top: -10px;
+}
+
 /* Results */
 #total-loan-result {
-    margin-top: -30px;
+    margin-top: 100px;
+}
+
+#interest-in-total-loan, #monthly-payment-of-interest {
+    margin-top: 20px;
+    margin-bottom: 40px;
 }
 
 /* Remove input arrows */
