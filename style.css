@@ -92,13 +92,18 @@ input {
 
     /* Interaction */
     cursor: pointer;
-    transition-duration: .5s;
+    transition-duration: 0.5s;
 }
 
 #calc-btn:hover {
     /* Colors and text */
     background-color:  rgb(0, 29, 82);
     color: white;
+}
+
+/* Results */
+#total-loan-result {
+    margin-top: -30px;
 }
 
 /* Remove input arrows */

@@ -32,9 +32,9 @@
         <label for="">Interest rate (%)</label>
         <input type="number" name="interest-rate" id="interest-rate" class="input">
 
-        <input type="radio" name="monthly-or-anual" id="monthly" checked class="input-radio">
+        <input type="radio" name="monthly-or-anual" id="monthly" class="input-radio">
         <label for="monthly-or-anual" class="label-radio" id="monthly-label">Monthly</label>
-        <input type="radio" name="monthly-or-anual" id="anual" class="input-radio">
+        <input type="radio" name="monthly-or-anual" id="anual" class="input-radio" checked>
         <label for="monthly-or-anual" class="label-radio">Anual</label><br>
 
         <label for="years" id="years-paying">Years paying</label>
@@ -48,14 +48,15 @@
             <option value="25"></option>
             <option value="30"></option>
           </datalist>
-        <p id="years-result">15 Years</p>
+        <p id="years-result">16 years</p>
 
         <!-- Button -->
         <button id="calc-btn">Calculate</button>
 
         <!-- Results -->
-        <div id="total-loan-result"><h2 id="cents">Total loan</h2>
-        <h2 id="monthly-payment">Monthly payment</h2>
+        <div id="total-loan-result">
+            <h2 id="total-loan">Total loan</h2>
+            <h2 id="monthly-payment">Monthly payment</h2>
         </div>
 
         <script src="script.js"></script>
