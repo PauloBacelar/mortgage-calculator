@@ -37,6 +37,18 @@ function calcTotalLoan() {
     }
 }
 
+function calcMonthlyPayment(loan) {
+    return (loan / years.value).toFixed(2);
+}
+
+function showLoan(loan) {
+    totalLoan.textContent = `Total loan: $${loan}`
+}
+
+function showMonthlyPayment(loan) {
+    monthlyPayment.textContent = `Monthly payment: $${(loan / (years.value * 12)).toFixed(2)}`;
+}
+
 // Main functions
 button.addEventListener("click", function() {
     if(!checkInputs()){
@@ -45,7 +57,8 @@ button.addEventListener("click", function() {
     }
 
     let loan = calcTotalLoan();
-    console.log(loan);
+    showLoan(loan);
+    showMonthlyPayment(loan);
 });
 
 years.addEventListener("change", function() {
