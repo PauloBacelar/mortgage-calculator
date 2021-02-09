@@ -51,6 +51,24 @@ function showMonthlyPayment(loan) {
     monthlyPayment.textContent = `Monthly payment: $${(loan / (years.value * 12)).toFixed(2)}`;
 }
 
+function calcTotalInterest(loan) {
+    console.log(`${loan} - ${Number(homePrice.value)} = ${loan - Number(homePrice.value)}`);
+    return loan - Number(homePrice.value);
+}
+
+function showTotalInterest(totalInterest) {
+    totalInterest.textContent = `Total interest: ${totalInterest}$`;
+}
+
+function calcMonthlyInterest(loan) {
+    console.log(`${calcTotalInterest(loan)} / ${years.value} = ${calcTotalInterest(loan) / years.value}`);
+    return calcTotalInterest(loan) / years.value;
+}
+
+function showMonthlyInterest(monthlyInterestVal) {
+    monthlyInterest.textContent = `Monthly payment of interest: ${monthlyInterestVal}$`;
+}
+ 
 // Main functions
 button.addEventListener("click", function() {
     if(!checkInputs()){
@@ -61,6 +79,11 @@ button.addEventListener("click", function() {
     let loan = calcTotalLoan();
     showLoan(loan);
     showMonthlyPayment(loan);
+    
+    let totalInterest = calcTotalInterest(loan);
+    showTotalInterest(totalInterest);
+    let monthlyInterestVal = calcMonthlyInterest(loan);
+    showMonthlyInterest(monthlyInterestVal);
 });
 
 years.addEventListener("change", function() {
