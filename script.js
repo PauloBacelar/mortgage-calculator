@@ -8,6 +8,8 @@ const years = document.getElementById("years");
 const button = document.querySelector("button#calc-btn");
 const totalLoan = document.querySelector("h2#total-loan");
 const monthlyPayment = document.querySelector("h2#monthly-payment");
+const totalInterest = document.querySelector("h3#interest-in-total-loan");
+const monthlyInterest = document.querySelector("h3#monthly-payment-of-interest");
 
 // Functions
 function checkInputs() {

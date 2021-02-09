@@ -19,39 +19,41 @@
 </head>
 <body>
     <div id="content">
-        <!-- Title and subtitle -->
-        <h1>Mortgage calculator</h1>
+        <div id="calculation">
+            <!-- Title and subtitle -->
+            <h1>Mortgage calculator</h1>
 
-        <!-- Input -->
-        <label for="">Down payment ($)</label>
-        <input type="number" name="down-payment" class="input" id="down-payment">
+            <!-- Input -->
+            <label for="">Down payment ($)</label>
+            <input type="number" name="down-payment" class="input" id="down-payment">
 
-        <label for="">House value ($)</label>
-        <input type="number" name="house-value" class="input" id="house-value">
+            <label for="">House value ($)</label>
+            <input type="number" name="house-value" class="input" id="house-value">
 
-        <label for="">Interest rate (%)</label>
-        <input type="number" name="interest-rate" id="interest-rate" class="input">
+            <label for="">Interest rate (%)</label>
+            <input type="number" name="interest-rate" id="interest-rate" class="input">
 
-        <input type="radio" name="monthly-or-anual" id="monthly" class="input-radio">
-        <label for="monthly-or-anual" class="label-radio" id="monthly-label">Monthly</label>
-        <input type="radio" name="monthly-or-anual" id="anual" class="input-radio" checked>
-        <label for="monthly-or-anual" class="label-radio">Anual</label><br>
+            <input type="radio" name="monthly-or-anual" id="monthly" class="input-radio">
+            <label for="monthly-or-anual" class="label-radio" id="monthly-label">Monthly</label>
+            <input type="radio" name="monthly-or-anual" id="anual" class="input-radio" checked>
+            <label for="monthly-or-anual" class="label-radio">Anual</label><br>
 
-        <label for="years" id="years-paying">Years paying</label>
-        <input type="range" name="years" id="years" min=1 max=30 step=1 width="900px" list="tickmarks">
-        <datalist id="tickmarks">
-            <option value="1"></option>
-            <option value="5"></option>
-            <option value="10"></option>
-            <option value="15"></option>
-            <option value="20"></option>
-            <option value="25"></option>
-            <option value="30"></option>
-          </datalist>
-        <p id="years-result">16 years</p>
+            <label for="years" id="years-paying">Years paying</label>
+            <input type="range" name="years" id="years" min=1 max=30 step=1 width="900px" list="tickmarks">
+            <datalist id="tickmarks">
+                <option value="1"></option>
+                <option value="5"></option>
+                <option value="10"></option>
+                <option value="15"></option>
+                <option value="20"></option>
+                <option value="25"></option>
+                <option value="30"></option>
+            </datalist>
+            <p id="years-result">16 years</p>
 
-        <!-- Button -->
-        <button id="calc-btn">Calculate</button>
+            <!-- Button -->
+            <a href="#total-loan-result"><button id="calc-btn">Calculate</button></a>
+        </div>
 
         <!-- Results -->
         <div id="total-loan-result">
@@ -61,9 +63,10 @@
             <h2 id="monthly-payment">Monthly payment: 0$</h2>
             <h3 id="monthly-payment-of-interest">Monthly payment of interest: 0$</h3>
 
-            <button id="back-to-top">Back to top</button>
+            <a href="#calculation"><button id="back-to-top">Back to top</button></a>
         </div>
 
+        <!-- Link JavaScript -->
         <script src="script.js"></script>
     </div>
 </body>
