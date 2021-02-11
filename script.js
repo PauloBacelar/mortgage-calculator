@@ -33,38 +33,42 @@ function calcTotalLoan() {
     let toBePaid = homePrice.value - downPayment.value;
 
     if(monthly.checked) {
-        return (toBePaid * (((1 + interestRate.value / 100) ** (years.value * 12)))).toFixed(2);
+        return toBePaid * (((1 + interestRate.value / 100) ** (years.value * 12)));
     } else {
-        return (toBePaid * ((1 + interestRate.value / 100) ** years.value)).toFixed(2);
+        return toBePaid * ((1 + interestRate.value / 100) ** years.value);
     }
 }
 
 function calcMonthlyPayment(loan) {
-    return (loan / (years.value * 12)).toFixed(2);
+    return loan / (years.value * 12);
 }
 
 function showLoan(loan) {
-    totalLoan.textContent = `Total loan: $${loan}`
+    totalLoan.textContent = `Total loan: $${formatMoney(loan)}`
 }
 
 function showMonthlyPayment(loan) {
-    monthlyPayment.textContent = `Monthly payment: $${calcMonthlyPayment(loan)}`;
+    monthlyPayment.textContent = `Monthly payment: $${formatMoney(calcMonthlyPayment(loan))}`;
 }
 
 function calcTotalInterest(loan) {
-    return (loan - Number(homePrice.value)).toFixed(2);
+    return loan - ((Number(homePrice.value)) - Number(downPayment.value));
 }
 
 function showTotalInterest(totalInterestVal) {
-    totalInterest.textContent = `Total interest: $${totalInterestVal}`;
+    totalInterest.textContent = `Total paid in interest: $${formatMoney(totalInterestVal)}`;
 }
 
 function calcMonthlyInterest(loan) {
-    return (calcTotalInterest(loan) / (years.value * 12)).toFixed(2);
+    return calcTotalInterest(loan) / (years.value * 12);
 }
 
 function showMonthlyInterest(monthlyInterestVal) {
-    monthlyInterest.textContent = `Monthly payment of interest: $${monthlyInterestVal}`;
+    monthlyInterest.textContent = `Monthly payment of interest: $${formatMoney(monthlyInterestVal)}`;
+}
+
+function formatMoney(money) {
+    return (money).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
 }
  
 // Main functions
