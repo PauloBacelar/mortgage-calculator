@@ -14,11 +14,11 @@ const monthlyInterest = document.querySelector("h3#monthly-payment-of-interest")
 // Functions
 function checkInputs() {
     function greaterThanZero() {
-        return downPayment.value >= 0 && homePrice.value > 0 && interestRate.value > 0;
+        return Number(downPayment.value) >= 0 && Number(homePrice.value) > 0 && Number(interestRate.value) > 0;
     }
 
     function maximumValues() {
-        return homePrice.value < 1000000000 && downPayment.value < homePrice.value && (monthly.checked && interestRate.value <= 1 || !monthly.checked && interestRate.value <= 12);
+        return Number(homePrice.value) < 1000000000 && Number(downPayment.value) < Number(homePrice.value) && (Number(monthly.checked) && Number(interestRate.value) <= 1 || !Number(monthly.checked) && Number(interestRate.value <= 12));
     }
 
     return greaterThanZero() && maximumValues();
@@ -40,7 +40,7 @@ function calcTotalLoan() {
 }
 
 function calcMonthlyPayment(loan) {
-    return (loan / years.value).toFixed(2);
+    return (loan / (years.value * 12)).toFixed(2);
 }
 
 function showLoan(loan) {
@@ -48,25 +48,23 @@ function showLoan(loan) {
 }
 
 function showMonthlyPayment(loan) {
-    monthlyPayment.textContent = `Monthly payment: $${(loan / (years.value * 12)).toFixed(2)}`;
+    monthlyPayment.textContent = `Monthly payment: $${calcMonthlyPayment(loan)}`;
 }
 
 function calcTotalInterest(loan) {
-    console.log(`${loan} - ${Number(homePrice.value)} = ${loan - Number(homePrice.value)}`);
-    return loan - Number(homePrice.value);
+    return (loan - Number(homePrice.value)).toFixed(2);
 }
 
-function showTotalInterest(totalInterest) {
-    totalInterest.textContent = `Total interest: ${totalInterest}$`;
+function showTotalInterest(totalInterestVal) {
+    totalInterest.textContent = `Total interest: $${totalInterestVal}`;
 }
 
 function calcMonthlyInterest(loan) {
-    console.log(`${calcTotalInterest(loan)} / ${years.value} = ${calcTotalInterest(loan) / years.value}`);
-    return calcTotalInterest(loan) / years.value;
+    return (calcTotalInterest(loan) / (years.value * 12)).toFixed(2);
 }
 
 function showMonthlyInterest(monthlyInterestVal) {
-    monthlyInterest.textContent = `Monthly payment of interest: ${monthlyInterestVal}$`;
+    monthlyInterest.textContent = `Monthly payment of interest: $${monthlyInterestVal}`;
 }
  
 // Main functions
